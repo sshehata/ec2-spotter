@@ -64,7 +64,7 @@ apt-get install -y git
 pip install awscli
 
 cd /root
-git clone --depth=1 https://github.com/slavivanov/ec2-spotter.git
+git clone --depth=1 https://github.com/sshehata/ec2-spotter.git
 echo Got spotter scripts from github.
 
 cd ec2-spotter
@@ -108,7 +108,7 @@ EOF
 
 SPOT_REQUEST_ID=$(aws ec2 request-spot-instances --launch-specification file://specs.tmp --spot-price $ec2spotter_bid_price --output="text" --query="SpotInstanceRequests[*].SpotInstanceRequestId" --region ${LAUNCH_REGION})
 echo $SPOT_REQUEST_ID
-# Clean up
+# Clean update
 rm user-data.tmp
 rm specs.tmp
 rm volumes.tmp
